@@ -1,9 +1,13 @@
 import './App.css'
+import responseMovies from  './mocks/with-results.json'
+import withoutResults from  './mocks/no-results.json'
+import { Movies } from './components/Movies.jsx'
 
 function App() {
+  const movies = responseMovies.Search
 
   return (
-    <div>
+    <div className='page'>
 
       <header>
         <h1>Buscador de películas</h1>
@@ -14,9 +18,10 @@ function App() {
       </header>
 
       <main>
-        Resultado de la busqueda
+        <Movies movies={movies} />
       </main>
-    </div>  )
+    </div>  
+  )
 }
 
 export default App
